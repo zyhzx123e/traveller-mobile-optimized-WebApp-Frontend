@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="rareSpecies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rareSpecies_title1" type="xs:string" />
+        <xs:element name="rareSpecies_p1" type="xs:string" />
+        <xs:element name="rareSpecies_img1" type="xs:string" />
+        <xs:element name="rareSpecies_p2" type="xs:string" />
+        <xs:element name="rareSpecies_p3" type="xs:string" />
+        <xs:element name="rareSpecies_title2" type="xs:string" />
+        <xs:element name="rareSpecies_img2" type="xs:string" />
+        <xs:element name="rareSpecies_p4" type="xs:string" />
+        <xs:element name="rareSpecies_p5" type="xs:string" />
+        <xs:element name="rareSpecies_p6" type="xs:string" />
+        <xs:element name="rareSpecies_p7" type="xs:string" />
+        <xs:element name="rareSpecies_p8" type="xs:string" />
+        <xs:element name="rareSpecies_img3" type="xs:string" />
+        <xs:element name="rareSpecies_p9" type="xs:string" />
+        <xs:element name="rareSpecies_img4" type="xs:string" />
+        <xs:element name="rareSpecies_title3" type="xs:string" />
+        <xs:element name="rareSpecies_p10" type="xs:string" />
+        <xs:element name="rareSpecies_p11" type="xs:string" />
+        <xs:element name="rareSpecies_p12" type="xs:string" />
+        <xs:element name="rareSpecies_img5" type="xs:string" />
+        <xs:element name="rareSpecies_p13" type="xs:string" />
+        <xs:element name="rareSpecies_p14" type="xs:string" />
+        <xs:element name="rareSpecies_img6" type="xs:string" />
+        <xs:element name="rareSpecies_title4" type="xs:string" />
+        <xs:element name="rareSpecies_p15" type="xs:string" />
+        <xs:element name="rareSpecies_p16" type="xs:string" />
+        <xs:element name="rareSpecies_title5" type="xs:string" />
+        <xs:element name="rareSpecies_img7" type="xs:string" />
+        <xs:element name="rareSpecies_p17" type="xs:string" />
+        <xs:element name="rareSpecies_img8" type="xs:string" />
+        <xs:element name="rareSpecies_p18" type="xs:string" />
+        <xs:element name="rareSpecies_p19" type="xs:string" />
+        <xs:element name="rareSpecies_img9" type="xs:string" />
+        <xs:element name="rareSpecies_p20" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FubarDev.FtpServer.FileSystem.GoogleDrive</name>
+    </assembly>
+    <members>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload">
+            <summary>
+            This class performs the upload in the background
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.#ctor(System.String,RestSharp.Portable.Google.Drive.Model.File,FubarDev.FtpServer.FileSystem.ITemporaryData,FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload"/> class.
+            </summary>
+            <param name="fullPath">The full path to this item</param>
+            <param name="file">The file to upload to</param>
+            <param name="tempData">The temporary data used to read from</param>
+            <param name="fileSystem">The file system that initiated this background upload</param>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.File">
+            <summary>
+            Gets the file to upload to
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.FileSize">
+            <summary>
+            Gets the file size
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.TransferId">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.Start(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.Dispose(System.Boolean)">
+            <summary>
+            Dispose the object
+            </summary>
+            <param name="disposing"><code>true</code> when called from <see cref="M:FubarDev.FtpServer.FileSystem.GoogleDrive.BackgroundUpload.Dispose"/></param>
+        </member>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleClientWithRefreshToken">
+            <summary>
+            Specialization of the <see cref="T:RestSharp.Portable.Authenticators.OAuth2.Client.GoogleClient"/> class which ensures that the
+            approval prompt is shown.
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleClientWithRefreshToken.#ctor(RestSharp.Portable.Authenticators.OAuth2.Infrastructure.IRequestFactory,RestSharp.Portable.Authenticators.OAuth2.Configuration.IClientConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleClientWithRefreshToken"/> class.
+            </summary>
+            <param name="factory">The factory.</param><param name="configuration">The configuration.</param>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleClientWithRefreshToken.BeforeGetLoginLinkUri(RestSharp.Portable.Authenticators.OAuth2.BeforeAfterRequestArgs)">
+            <summary>
+            Called just before building the request URI when everything is ready.
+                        Allows to add extra parameters to request or do any other needed preparations.
+            </summary>
+            <param name="args">The argument containing the request to modify</param>
+            <returns>The task used to execute the function to modify the request</returns>
+        </member>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry">
+            <summary>
+            Implementatio of <see cref="T:FubarDev.FtpServer.FileSystem.IUnixDirectoryEntry"/> for Google Drive
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.#ctor(FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem,RestSharp.Portable.Google.Drive.Model.File,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry"/> class.
+            </summary>
+            <param name="fileSystem">The file system this instance belongs to</param>
+            <param name="file">The directory this entry belongs to</param>
+            <param name="fullPath">The full path</param>
+            <param name="isRoot">Is this a root directory?</param>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.IsRoot">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.IsDeletable">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.File">
+            <summary>
+            Gets the internal model data for Google Drive
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.FullName">
+            <summary>
+            Gets the full path relative to the drive root
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.Permissions">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.LastWriteTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.CreatedTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.NumberOfLinks">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.FileSystem">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.Owner">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDirectoryEntry.Group">
+            <inheritdoc/>
+        </member>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream">
+            <summary>
+            Encapsulation of a <see cref="T:System.Net.HttpWebResponse"/> stream.
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.#ctor(System.Net.HttpWebResponse,System.Int64,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream"/> class.
+            </summary>
+            <param name="response">The response of the file to download</param>
+            <param name="startPosition">The start position of the file to download</param>
+            <param name="contentLength">The full (not remaining) length of the file to download</param>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.CanRead">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.CanSeek">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.CanWrite">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.Length">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.Position">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.Flush">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.SetLength(System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveDownloadStream.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry">
+            <summary>
+            The implementation of <see cref="T:FubarDev.FtpServer.FileSystem.IUnixFileEntry"/> for Google Drive.
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.#ctor(FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem,RestSharp.Portable.Google.Drive.Model.File,System.String,System.Nullable{System.Int64})">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry"/> class.
+            </summary>
+            <param name="fileSystem">The file system this entry belongs to</param>
+            <param name="file">The underlying model</param>
+            <param name="fullName">The full path and file name of this entry</param>
+            <param name="fileSize">The file size (if it differs from the one in the model)</param>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.File">
+            <summary>
+            Gets the underlying model
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.FullName">
+            <summary>
+            Gets the full path to this entry
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.Permissions">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.LastWriteTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.CreatedTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.NumberOfLinks">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.FileSystem">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.Owner">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.Group">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileEntry.Size">
+            <inheritdoc/>
+        </member>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem">
+            <summary>
+            The <see cref="T:FubarDev.FtpServer.FileSystem.IUnixFileSystem"/> implementation that uses Google Drive
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.#ctor(RestSharp.Portable.Google.Drive.GoogleDriveService,RestSharp.Portable.Google.Drive.Model.File,FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem"/> class.
+            </summary>
+            <param name="service">The <see cref="T:RestSharp.Portable.Google.Drive.GoogleDriveService"/> instance to use to access the Google Drive</param>
+            <param name="rootFolderInfo">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to use as root folder</param>
+            <param name="requestFactory">A <see cref="T:RestSharp.Portable.Google.Drive.IRequestFactory"/> used to create <see cref="T:RestSharp.Portable.IRestClient"/> and <see cref="T:System.Net.HttpWebRequest"/> objects</param>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.Service">
+            <summary>
+            Gets the <see cref="T:RestSharp.Portable.Google.Drive.GoogleDriveService"/> instance to use to access the Google Drive
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.RootFolderInfo">
+            <summary>
+            Gets the <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to use as root folder
+            </summary>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.SupportsNonEmptyDirectoryDelete">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.FileSystemEntryComparer">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.Root">
+            <inheritdoc/>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.SupportsAppend">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.GetEntriesAsync(FubarDev.FtpServer.FileSystem.IUnixDirectoryEntry,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.GetEntryByNameAsync(FubarDev.FtpServer.FileSystem.IUnixDirectoryEntry,System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.MoveAsync(FubarDev.FtpServer.FileSystem.IUnixDirectoryEntry,FubarDev.FtpServer.FileSystem.IUnixFileSystemEntry,FubarDev.FtpServer.FileSystem.IUnixDirectoryEntry,System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.UnlinkAsync(FubarDev.FtpServer.FileSystem.IUnixFileSystemEntry,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.CreateDirectoryAsync(FubarDev.FtpServer.FileSystem.IUnixDirectoryEntry,System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.OpenReadAsync(FubarDev.FtpServer.FileSystem.IUnixFileEntry,System.Int64,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.AppendAsync(FubarDev.FtpServer.FileSystem.IUnixFileEntry,System.Nullable{System.Int64},System.IO.Stream,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.CreateAsync(FubarDev.FtpServer.FileSystem.IUnixDirectoryEntry,System.String,System.IO.Stream,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.ReplaceAsync(FubarDev.FtpServer.FileSystem.IUnixFileEntry,System.IO.Stream,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.SetMacTimeAsync(FubarDev.FtpServer.FileSystem.IUnixFileSystemEntry,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.UploadFinished(System.String)">
+            <summary>
+            Is called when the upload is finished.
+            </summary>
+            <param name="fileId">The ID of the file to be notified as finished.</param>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.Dispose(System.Boolean)">
+            <summary>
+            Dispose the object
+            </summary>
+            <param name="disposing"><code>true</code> when called from <see cref="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystem.Dispose"/></param>
+        </member>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystemProvider">
+            <summary>
+            A file system provider for Google Drive
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystemProvider.#ctor(RestSharp.Portable.Google.Drive.Model.File,FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystemProvider"/> class.
+            </summary>
+            <param name="rootFolder">The root folder entry</param>
+            <param name="requestFactory">A <see cref="T:RestSharp.Portable.Google.Drive.IRequestFactory"/> used to create <see cref="T:RestSharp.Portable.IRestClient"/> and <see cref="T:System.Net.HttpWebRequest"/> objects</param>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveFileSystemProvider.Create(System.String,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory">
+            <summary>
+            The default implementation of a <see cref="T:RestSharp.Portable.Google.Drive.IRequestFactory"/> for Google Drive
+            </summary>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory.#ctor(RestSharp.Portable.Authenticators.OAuth2.OAuth2Client,System.Func{RestSharp.Portable.IRestClient},System.Func{FubarDev.FtpServer.FileSystem.ITemporaryData})">
+            <summary>
+            Initializes a new instance of the <see cref="T:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory"/> class.
+            </summary>
+            <param name="oAuth2Client">The OAuth2 client to be used to get the authentication token</param>
+            <param name="restClientCreateFunc">A delegate to create a new <see cref="T:RestSharp.Portable.IRestClient"/></param>
+            <param name="createTempDataFunc">A delegate to create a temporary storage</param>
+        </member>
+        <member name="P:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory.ConfigureWebRequest">
+            <summary>
+            Gets or sets an action that does additional HttpWebRequest configuration
+            </summary>
+            <remarks>
+            This is useful to set the <code>AllowAutoRedirect</code> property which is not available for portable class libraries.
+            </remarks>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory.CreateRestClient(System.Uri)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory.CreateWebRequest(System.Uri)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FubarDev.FtpServer.FileSystem.GoogleDrive.GoogleDriveSupportFactory.CreateTemporaryData(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Creates a temporary data store and fills it with the data of the provided <paramref name="data"/> stream.
+            </summary>
+            <param name="data">The data stream to fill the temporary data storage with</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns>The created temporary data storage</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stuff_likes>
+  <stuff_like stuff_id="stuff1">
+    <stuff_like_uid>lucy_jjjeon</stuff_like_uid>
+    <stuff_like_uid>xidada2012</stuff_like_uid>
+    <stuff_like_uid>charlie_kk</stuff_like_uid>
+  </stuff_like>
+  <stuff_like stuff_id="stuff2">
+    <stuff_like_uid>markzukkkk9</stuff_like_uid>
+    <stuff_like_uid>charlie_kk</stuff_like_uid>
+  </stuff_like>
+  <stuff_like stuff_id="stuff3">
+    <stuff_like_uid>charlie_kk</stuff_like_uid>
+    <stuff_like_uid>eminem9379</stuff_like_uid>
+    <stuff_like_uid>xidada2012</stuff_like_uid>
+  </stuff_like>
+  <stuff_like stuff_id="stuff4">
+    <stuff_like_uid>lucy_jjjeon</stuff_like_uid>
+    <stuff_like_uid>markzukkkk9</stuff_like_uid>
+    <stuff_like_uid>xidada2012</stuff_like_uid>
+  </stuff_like>
+  <stuff_like stuff_id="stuff9">
+    <stuff_like_uid>charlie_kk</stuff_like_uid>
+  </stuff_like>
+</stuff_likes>

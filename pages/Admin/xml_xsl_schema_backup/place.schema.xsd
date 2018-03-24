@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="places">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="place">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="place_id" type="xs:string" />
+              <xs:element name="place_img" type="xs:string" />
+              <xs:element name="place_title" type="xs:string" />
+              <xs:element name="place_name" type="xs:string" />
+              <xs:element name="place_description" type="xs:string" />
+              <xs:element name="place_time_upload" type="xs:string" />
+              <xs:element name="place_uid" type="xs:string" />
+              <xs:element name="place_user_img" type="xs:string" />
+              <xs:element name="place_longitude" type="xs:decimal" />
+              <xs:element name="place_latitude" type="xs:decimal" />
+              <xs:element name="place_address" type="xs:string" />
+              <xs:element name="place_like_count" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

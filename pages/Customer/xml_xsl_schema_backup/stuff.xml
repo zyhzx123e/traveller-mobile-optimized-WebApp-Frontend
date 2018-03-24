@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stuffs>
+  <stuff>
+    <stuff_id>stuff1</stuff_id>
+    <stuff_img>http://res.cloudinary.com/barterworld/image/upload/v1511417563/bkt_gcycrp.jpg</stuff_img>
+    <stuff_title>Borneo KK super delicious Bah Kut Teh</stuff_title>
+    <stuff_name>Bah Kut Teh</stuff_name>
+    <stuff_description>Most delicious Bah Kut Teh ever, Must try in Borneo!</stuff_description>
+    <stuff_time_upload>2017-11-16 12:10:14</stuff_time_upload>
+    <stuff_uid>markzukkkk9</stuff_uid>
+    <stuff_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754151/mark_o2mzh7.jpg</stuff_user_img>
+    <stuff_longitude>116.090437</stuff_longitude>
+    <stuff_latitude>5.962900</stuff_latitude>
+    <stuff_address>Damai Man Li Hiong Bak Kut Teh</stuff_address>
+    <stuff_like_count>3</stuff_like_count>
+  </stuff>
+  <stuff>
+    <stuff_id>stuff2</stuff_id>
+    <stuff_img>http://res.cloudinary.com/barterworld/image/upload/v1512144230/rykrovq7esxb47tsmyfw.jpg</stuff_img>
+    <stuff_title>Borneo KK Tuaran Mee Exclusive</stuff_title>
+    <stuff_name>Tuaran Mee</stuff_name>
+    <stuff_description>If you ask Sabah people which delicacies are “Made in Sabah”, no doubt Tuaran Noodle (locally known as Tuaran Mee, 斗亚兰面 in Chinese), a traditional handmade egg noodle born in Tuaran town is on top of the list. Like Laksa to Penang, Kolo Mee to Sarawak, Tuaran Mee is the noodle representing Sabah state.</stuff_description>
+    <stuff_time_upload>2017-12-02 00:03:45</stuff_time_upload>
+    <stuff_uid>charlie_kk</stuff_uid>
+    <stuff_user_img>http://res.cloudinary.com/barterworld/image/upload/v1511162651/kfwbth4bko5eywklowmv.jpg</stuff_user_img>
+    <stuff_longitude>116.1323</stuff_longitude>
+    <stuff_latitude>5.9933</stuff_latitude>
+    <stuff_address>mile 6, Jalan Tuaran, Inanam, 88450 Kota Kinabalu, Sabah, Jalan Tuaran, Inanam, 88450 Kota Kinabalu, Sabah</stuff_address>
+    <stuff_like_count>2</stuff_like_count>
+  </stuff>
+  <stuff>
+    <stuff_id>stuff3</stuff_id>
+    <stuff_img>http://res.cloudinary.com/barterworld/image/upload/v1511658871/littleitaly_ydluvg.jpg</stuff_img>
+    <stuff_title>KK Little Italy</stuff_title>
+    <stuff_name>The Best Italian Restaurant Outside Of Italy</stuff_name>
+    <stuff_description>Little Italy is owned and managed on a very personal basis by the Italian family, the Ceresa’s, who hailed from Torino, Northwest Italy. Like most Italian families, this particular one loves cooking and admits that the delicious cuisines have been served on the Ceresa’s family dinner table for generations. In other words, every dish on the Little Italy menu have been tried and tested for generations, and are authentically Italian in every way.</stuff_description>
+    <stuff_time_upload>2017-11-23 20:15:27</stuff_time_upload>
+    <stuff_uid>lucy_jjjeon</stuff_uid>
+    <stuff_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754153/lucy_pjuhin.png</stuff_user_img>
+    <stuff_longitude>116.0768</stuff_longitude>
+    <stuff_latitude>5.9854</stuff_latitude>
+    <stuff_address>Jalan Haji Saman, Pusat Bandar Kota Kinabalu, 88813 Kota Kinabalu, Sabah</stuff_address>
+    <stuff_like_count>3</stuff_like_count>
+  </stuff>
+  <stuff>
+    <stuff_id>stuff4</stuff_id>
+    <stuff_img>http://res.cloudinary.com/barterworld/image/upload/v1511659513/biru4_u3rmlp.jpg</stuff_img>
+    <stuff_title>Biru Biru Café</stuff_title>
+    <stuff_name>Blue Blue Cafe</stuff_name>
+    <stuff_description>Stroll along Australian Place in Kota Kinabalu and you will find a unique restaurant in blue – hence the name ‘Biru Biru.’ Back in 1945, this area was the camp site of the Alliance during World War II. On the exact spot where Biru-Biru stands, the first concrete building was erected post-war.  This building initially served as a printing press before adapted to other functions – today it houses a backpacker lodge and Biru Biru café. Apart from the obvious colour theme of the café (biru means blue),the name was also inspired by a famous local song, Sayang Kinabalu which uses the line ‘biru biru.’ The café stands out with its vintage and upcycled furniture, with handmade tables and bar-tops.</stuff_description>
+    <stuff_time_upload>2017-11-25 13:24:19</stuff_time_upload>
+    <stuff_uid>eminem9379</stuff_uid>
+    <stuff_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754153/eminem_i6j2lk.jpg</stuff_user_img>
+    <stuff_longitude>116.0777</stuff_longitude>
+    <stuff_latitude>5.9833</stuff_latitude>
+    <stuff_address>24 Jalan Dewan,47301  Kota Kinabalu  Sabah Malaysia</stuff_address>
+    <stuff_like_count>3</stuff_like_count>
+  </stuff>
+  <stuff>
+    <stuff_id>stuff9</stuff_id>
+    <stuff_img>http://res.cloudinary.com/barterworld/image/upload/v1512145059/oxtssfg3nojbyvy2lkbu.jpg</stuff_img>
+    <stuff_title>Malay Traditional Gong and Drum</stuff_title>
+    <stuff_name>Sabah Musuem</stuff_name>
+    <stuff_description>This Gong and Drum which is belongs to original Malay local indigenous tribe iban which it has more than 24 different sounds could be hit, you must try it out!</stuff_description>
+    <stuff_time_upload>2017-12-02 00:17:35</stuff_time_upload>
+    <stuff_uid>charlie_kk</stuff_uid>
+    <stuff_user_img>http://res.cloudinary.com/barterworld/image/upload/v1511162651/kfwbth4bko5eywklowmv.jpg</stuff_user_img>
+    <stuff_longitude>116.071516</stuff_longitude>
+    <stuff_latitude>5.960387</stuff_latitude>
+    <stuff_address>Jalan Muzium, 88300 Kota Kinabalu, Sabah, 马来西亚</stuff_address>
+    <stuff_like_count>1</stuff_like_count>
+  </stuff>
+</stuffs>

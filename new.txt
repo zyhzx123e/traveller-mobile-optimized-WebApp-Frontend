@@ -1,0 +1,4 @@
+added google login
+loading action
+fast post action
+linked newapi

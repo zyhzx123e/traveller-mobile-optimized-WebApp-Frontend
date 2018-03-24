@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="waterSport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="waterSport_title1" type="xs:string" />
+        <xs:element name="waterSport_p1_1" type="xs:string" />
+        <xs:element name="waterSport_p1_2" type="xs:string" />
+        <xs:element name="waterSport_p1_3" type="xs:string" />
+        <xs:element name="waterSport_title2" type="xs:string" />
+        <xs:element name="waterSport_p2_1" type="xs:string" />
+        <xs:element name="waterSport_p2_2" type="xs:string" />
+        <xs:element name="waterSport_title3" type="xs:string" />
+        <xs:element name="waterSport_title3_sub1" type="xs:string" />
+        <xs:element name="waterSport_p3_1" type="xs:string" />
+        <xs:element name="waterSport_p3_img1" type="xs:string" />
+        <xs:element name="waterSport_title4" type="xs:string" />
+        <xs:element name="waterSport_p4" type="xs:string" />
+        <xs:element name="waterSport_p4_img1" type="xs:string" />
+        <xs:element name="waterSport_title5" type="xs:string" />
+        <xs:element name="waterSport_p5" type="xs:string" />
+        <xs:element name="waterSport_p5_img1" type="xs:string" />
+        <xs:element name="waterSport_title6" type="xs:string" />
+        <xs:element name="waterSport_p6" type="xs:string" />
+        <xs:element name="waterSport_p6_img1" type="xs:string" />
+        <xs:element name="waterSport_title7" type="xs:string" />
+        <xs:element name="waterSport_title7_sub1" type="xs:string" />
+        <xs:element name="waterSport_p7" type="xs:string" />
+        <xs:element name="waterSport_p7_img1" type="xs:string" />
+        <xs:element name="waterSport_title8" type="xs:string" />
+        <xs:element name="waterSport_p8" type="xs:string" />
+        <xs:element name="waterSport_p8_img1" type="xs:string" />
+        <xs:element name="waterSport_title9" type="xs:string" />
+        <xs:element name="waterSport_p9" type="xs:string" />
+        <xs:element name="waterSport_p9_img1" type="xs:string" />
+        <xs:element name="waterSport_title10" type="xs:string" />
+        <xs:element name="waterSport_p10" type="xs:string" />
+        <xs:element name="waterSport_p10_img1" type="xs:string" />
+        <xs:element name="waterSport_title11" type="xs:string" />
+        <xs:element name="waterSport_title11_sub1" type="xs:string" />
+        <xs:element name="waterSport_p11" type="xs:string" />
+        <xs:element name="waterSport_p11_img1" type="xs:string" />
+        <xs:element name="waterSport_title12" type="xs:string" />
+        <xs:element name="waterSport_p12" type="xs:string" />
+        <xs:element name="waterSport_p12_img1" type="xs:string" />
+        <xs:element name="waterSport_title13" type="xs:string" />
+        <xs:element name="waterSport_p13" type="xs:string" />
+        <xs:element name="waterSport_p13_img1" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

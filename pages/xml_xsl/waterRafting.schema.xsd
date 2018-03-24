@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="waterRafting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="waterRafting_title1" type="xs:string" />
+        <xs:element name="waterRafting_p1" type="xs:string" />
+        <xs:element name="waterRafting_p2" type="xs:string" />
+        <xs:element name="waterRafting_img1" type="xs:string" />
+        <xs:element name="waterRafting_title2" type="xs:string" />
+        <xs:element name="waterRafting_p3" type="xs:string" />
+        <xs:element name="waterRafting_p4" type="xs:string" />
+        <xs:element name="waterRafting_img2" type="xs:string" />
+        <xs:element name="waterRafting_title3" type="xs:string" />
+        <xs:element name="waterRafting_p5" type="xs:string" />
+        <xs:element name="waterRafting_p6" type="xs:string" />
+        <xs:element name="waterRafting_title4" type="xs:string" />
+        <xs:element name="waterRafting_p7" type="xs:string" />
+        <xs:element name="waterRafting_p8" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<borneo_hot>
+   <borneo_hot_post>
+		<borneo_hot_post_title>Mount Kinabalu</borneo_hot_post_title>
+		<borneo_hot_post_img>~/images/mtk.jpg</borneo_hot_post_img>
+		<borneo_hot_post_url>~/pages/MountKK.aspx</borneo_hot_post_url>
+   </borneo_hot_post>
+     <borneo_hot_post>
+		<borneo_hot_post_title>North Borneo Water Sport</borneo_hot_post_title>
+		<borneo_hot_post_img>~/images/water_sport_banana.jpg</borneo_hot_post_img>
+		<borneo_hot_post_url>~/pages/waterSport.aspx</borneo_hot_post_url>
+   </borneo_hot_post>
+     <borneo_hot_post>
+		<borneo_hot_post_title>North Borneo Rainforest</borneo_hot_post_title>
+		<borneo_hot_post_img>~/images/Summer-Forest-Sunshine-1920x1200.jpg</borneo_hot_post_img>
+		<borneo_hot_post_url>~/pages/borneoRainforest.aspx</borneo_hot_post_url>
+   </borneo_hot_post>
+     <borneo_hot_post>
+		<borneo_hot_post_title>North Borneo Resort</borneo_hot_post_title>
+		<borneo_hot_post_img>~/images/sutera-harbour-resort.jpg</borneo_hot_post_img>
+		<borneo_hot_post_url>~/pages/borneoResort.aspx</borneo_hot_post_url>
+   </borneo_hot_post>
+     <borneo_hot_post>
+		<borneo_hot_post_title>North Borneo Rare Species</borneo_hot_post_title>
+		<borneo_hot_post_img>~/images/proboscis-monkey.jpg</borneo_hot_post_img>
+		<borneo_hot_post_url>~/pages/rareSpecies.aspx</borneo_hot_post_url>
+   </borneo_hot_post>
+     <borneo_hot_post>
+		<borneo_hot_post_title>North Borneo White Water Rafting</borneo_hot_post_title>
+		<borneo_hot_post_img>~/images/padas-rafting-01.jpg</borneo_hot_post_img>
+		<borneo_hot_post_url>~/pages/waterRafting.aspx</borneo_hot_post_url>
+   </borneo_hot_post>
+ </borneo_hot>

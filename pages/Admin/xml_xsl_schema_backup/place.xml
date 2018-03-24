@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<places>
+  <place>
+    <place_id>place1</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511101482/fbsaiage0nr1rd3q0utw.jpg</place_img>
+    <place_title>Sabah Golf Country Club</place_title>
+    <place_name>SGCC</place_name>
+    <place_description>Super Fancy</place_description>
+    <place_time_upload>2017-11-11 14:30:20</place_time_upload>
+    <place_uid>eminem9379</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754153/eminem_i6j2lk.jpg</place_user_img>
+    <place_longitude>116.102614</place_longitude>
+    <place_latitude>5.956260</place_latitude>
+    <place_address>Sabah Golf and Country Club</place_address>
+    <place_like_count>3</place_like_count>
+  </place>
+  <place>
+    <place_id>place2</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511653147/BORNEOnexus_karambunai_f3f9y0.jpg</place_img>
+    <place_title>Nexus Resort &amp; Spa Karambunai</place_title>
+    <place_name>Nexus in Karambunai</place_name>
+    <place_description>Nexus Resort Karambunai, located 30 km North East of Kota Kinabalu, Sabah, nestles on 65 acres of lush landscaped surrounds on the Karambunai Peninsula, upon the fringes of a 6km pristine white sand beach, with a million year old tropical rainforest and the distant majesty of Mount Kinabalu as its backdrop.</place_description>
+    <place_time_upload>2017-11-14 12:31:10</place_time_upload>
+    <place_uid>lucy_jjjeon</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754153/lucy_pjuhin.png</place_user_img>
+    <place_longitude>116.1082</place_longitude>
+    <place_latitude>6.1147</place_latitude>
+    <place_address>Nexus Resort &amp; Spa Karambunai, off Jalan Sepanggar Bay, Locked Bag 100,, Sabah, 88993 Kota Kinabalu</place_address>
+    <place_like_count>3</place_like_count>
+  </place>
+  <place>
+    <place_id>place3</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511653955/borneoimage_gx1zrt.jpg</place_img>
+    <place_title>Danum Valley Rainforest</place_title>
+    <place_name>Danum Valley Conservation Area</place_name>
+    <place_description>This is the oldest natural rainforest in the world, which is even older than Amazon! Here has so many different creatures that I have never seen before...</place_description>
+    <place_time_upload>2017-11-15 11:42:51</place_time_upload>
+    <place_uid>markzukkkk9</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754151/mark_o2mzh7.jpg</place_user_img>
+    <place_longitude>117.6892</place_longitude>
+    <place_latitude>4.9618</place_latitude>
+    <place_address>Danum Valley Conservation Area is a 438 square kilometres tract of relatively undisturbed lowland dipterocarp forest in Sabah, Malaysia</place_address>
+    <place_like_count>0</place_like_count>
+  </place>
+  <place>
+    <place_id>place4</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511654275/kota-kinabalu-waterfront-bars-cafes-restaurants_lickee.jpg</place_img>
+    <place_title>Kota Kinabalu Waterfront</place_title>
+    <place_name>Great place to hang out and relax</place_name>
+    <place_description>Kota Kinabalu's one-stop dining and entertainment centre is found right here along the famous Waterfront. The Waterfront is a popular hangout for both locals and visitors alike.</place_description>
+    <place_time_upload>2017-11-18 19:46:32</place_time_upload>
+    <place_uid>xidada2012</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754152/xidada_jkwfq8.jpg</place_user_img>
+    <place_longitude>116.0488</place_longitude>
+    <place_latitude>5.9307</place_latitude>
+    <place_address>Waterfront Kota Kinabalu, 88000 Kota Kinabalu, Sabah</place_address>
+    <place_like_count>0</place_like_count>
+  </place>
+  <place>
+    <place_id>place5</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511440257/shangri-la-s-tanjung_1_otvhgx.jpg</place_img>
+    <place_title>Tangjung Aru Shangri La Resort</place_title>
+    <place_name>Kota Kinabalu Shangri la Resort</place_name>
+    <place_description>Great view of sunset and environment</place_description>
+    <place_time_upload>2017-11-20 18:32:20</place_time_upload>
+    <place_uid>lucy_jjjeon</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754153/lucy_pjuhin.png</place_user_img>
+    <place_longitude>116.14795</place_longitude>
+    <place_latitude>6.15505</place_latitude>
+    <place_address>KK Shangri la's Resort &amp; Spa</place_address>
+    <place_like_count>3</place_like_count>
+  </place>
+  <place>
+    <place_id>place6</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511654838/pacific-sutera-kota-kinabalu_wzsopf.jpg</place_img>
+    <place_title>Pacific Sutera</place_title>
+    <place_name>Sutera Harbour | The Pacific Sutera</place_name>
+    <place_description>The luxurious 5-star The Pacific Sutera Hotel in Kota Kinabalu features 500 immaculately appointed rooms and suites with contemporary décor and dramatic views of either the sprawling golf course or of the sea and nearby tropical islands.</place_description>
+    <place_time_upload>2017-11-22 14:32:20</place_time_upload>
+    <place_uid>eminem9379</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754153/eminem_i6j2lk.jpg</place_user_img>
+    <place_longitude>116.0568</place_longitude>
+    <place_latitude>5.9655</place_latitude>
+    <place_address>The Pacific Sutera Hotel, 1 Sutera Harbour Boulevard, Sutera Harbour, 88100 Kota Kinabalu, Sabah</place_address>
+    <place_like_count>0</place_like_count>
+  </place>
+  <place>
+    <place_id>place7</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511655431/suria_sabah-career_mdhzpu.jpg</place_img>
+    <place_title>Suria Sabah</place_title>
+    <place_name>Kota Kinabalu Suria Sabah Mall</place_name>
+    <place_description>Suria Sabah is a modern 1-stop city center shopping mall, designed with our beloved Sabahans and tourists in mind, and with a strong focus on local community building. The city center of Kota Kinabalu where the seeds of commerce was planted pre-independence, i.e. where Standard Chartered Bank, HSBC, Harrison’s Trading are located, is more than half a century old.</place_description>
+    <place_time_upload>2017-11-24 13:52:11</place_time_upload>
+    <place_uid>lucy_jjjeon</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1510754153/lucy_pjuhin.png</place_user_img>
+    <place_longitude>116.0773</place_longitude>
+    <place_latitude>5.9869</place_latitude>
+    <place_address>KK Shangri la's Resort &amp; Spa</place_address>
+    <place_like_count>0</place_like_count>
+  </place>
+  <place>
+    <place_id>place8</place_id>
+    <place_img>http://res.cloudinary.com/barterworld/image/upload/v1511612074/d6yhdr9ugvljknnzg5fy.jpg</place_img>
+    <place_title>Sunset Bar in Shangri La Resort</place_title>
+    <place_name>Shangri La Tangjung Aru KK</place_name>
+    <place_description>Here is a really gorgeous location to observe sunset, everyday around 5pm, tons of people were already here waiting to catch the moment of sunset.</place_description>
+    <place_time_upload>2017-11-25 19:04:29</place_time_upload>
+    <place_uid>charlie_kk</place_uid>
+    <place_user_img>http://res.cloudinary.com/barterworld/image/upload/v1511162651/kfwbth4bko5eywklowmv.jpg</place_user_img>
+    <place_longitude>116.040338</place_longitude>
+    <place_latitude>5.956545</place_latitude>
+    <place_address>15, Jalan Aru, Tanjung Aru, 88100 Kota Kinabalu, Sabah, Malaysia</place_address>
+    <place_like_count>4</place_like_count>
+  </place>
+</places>

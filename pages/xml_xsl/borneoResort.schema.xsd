@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="borneoResort">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="borneoResort_title1" type="xs:string" />
+        <xs:element name="borneoResort_img1" type="xs:string" />
+        <xs:element name="borneoResort_p1" type="xs:string" />
+        <xs:element name="borneoResort_title2" type="xs:string" />
+        <xs:element name="borneoResort_img2" type="xs:string" />
+        <xs:element name="borneoResort_p2" type="xs:string" />
+        <xs:element name="borneoResort_img3" type="xs:string" />
+        <xs:element name="borneoResort_p3" type="xs:string" />
+        <xs:element name="borneoResort_title3" type="xs:string" />
+        <xs:element name="borneoResort_img4" type="xs:string" />
+        <xs:element name="borneoResort_p4" type="xs:string" />
+        <xs:element name="borneoResort_img5" type="xs:string" />
+        <xs:element name="borneoResort_title4" type="xs:string" />
+        <xs:element name="borneoResort_p5" type="xs:string" />
+        <xs:element name="borneoResort_img6" type="xs:string" />
+        <xs:element name="borneoResort_p6" type="xs:string" />
+        <xs:element name="borneoResort_img7" type="xs:string" />
+        <xs:element name="borneoResort_hint1" type="xs:string" />
+        <xs:element name="borneoResort_p7" type="xs:string" />
+        <xs:element name="borneoResort_img8" type="xs:string" />
+        <xs:element name="borneoResort_hint2" type="xs:string" />
+        <xs:element name="borneoResort_hint3" type="xs:string" />
+        <xs:element name="borneoResort_hint4" type="xs:string" />
+        <xs:element name="borneoResort_hint5" type="xs:string" />
+        <xs:element name="borneoResort_img9" type="xs:string" />
+        <xs:element name="borneoResort_p8" type="xs:string" />
+        <xs:element name="borneoResort_title5" type="xs:string" />
+        <xs:element name="borneoResort_p9" type="xs:string" />
+        <xs:element name="borneoResort_img10" type="xs:string" />
+        <xs:element name="borneoResort_p10" type="xs:string" />
+        <xs:element name="borneoResort_img11" type="xs:string" />
+        <xs:element name="borneoResort_p11" type="xs:string" />
+        <xs:element name="borneoResort_img12" type="xs:string" />
+        <xs:element name="borneoResort_p12" type="xs:string" />
+        <xs:element name="borneoResort_img13" type="xs:string" />
+        <xs:element name="borneoResort_p13" type="xs:string" />
+        <xs:element name="borneoResort_img14" type="xs:string" />
+        <xs:element name="borneoResort_p14" type="xs:string" />
+        <xs:element name="borneoResort_img15" type="xs:string" />
+        <xs:element name="borneoResort_p15" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

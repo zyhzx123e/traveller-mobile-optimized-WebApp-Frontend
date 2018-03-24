@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="mountKK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="mountKK_title" type="xs:string" />
+        <xs:element name="mounKK_1stPic" type="xs:string" />
+        <xs:element name="mounKK_1st_para" type="xs:string" />
+        <xs:element name="mounKK_2nd_para" type="xs:string" />
+        <xs:element name="mounKK_2ndPic" type="xs:string" />
+        <xs:element name="mounKK_1st_sub_title" type="xs:string" />
+        <xs:element name="mounKK_3rd_para" type="xs:string" />
+        <xs:element name="mounKK_4th_para" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<place_likes>
+  <place_like place_id="place1">
+    <place_like_uid>lucy_jjjeon</place_like_uid>
+    <place_like_uid>xidada2012</place_like_uid>
+  </place_like>
+  <place_like place_id="place2">
+    <place_like_uid>eminem9379</place_like_uid>
+    <place_like_uid>markzukkkk9</place_like_uid>
+    <place_like_uid>charlie_kk</place_like_uid>
+  </place_like>
+  <place_like place_id="place5">
+    <place_like_uid>charlie_kk</place_like_uid>
+    <place_like_uid>eminem9379</place_like_uid>
+    <place_like_uid>xidada2012</place_like_uid>
+  </place_like>
+  <place_like place_id="place8">
+    <place_like_uid>lucy_jjjeon</place_like_uid>
+    <place_like_uid>markzukkkk9</place_like_uid>
+    <place_like_uid>eminem9379</place_like_uid>
+    <place_like_uid>xidada2012</place_like_uid>
+    <place_like_uid>charlie_kk</place_like_uid>
+  </place_like>
+  <place_like place_id="place3" />
+  <place_like place_id="place6">
+    <place_like_uid>charlie_kk</place_like_uid>
+  </place_like>
+  <place_like place_id="place10_uVgHS4ny"/>
+</place_likes>

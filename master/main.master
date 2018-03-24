@@ -1,0 +1,549 @@
+﻿<%@ Master Language="C#"    MasterPageFile="~/master/base.master" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="Master_pages_main" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder id="page_head" runat="server">
+      
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="userMenuContent" Runat="Server">
+          
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "55%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+   
+
+
+ 
+
+</script>
+
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('html').click(function () {
+                $("#mySidenav").css("width", 0);
+            });
+
+            $('#mySidenav').click(function (event) {
+                event.stopPropagation();
+            });
+
+            $('#headerContainer').click(function (event) {
+                event.stopPropagation();
+            });
+
+            $("#loader").css("visibility", "hidden");
+            $('#yourImage').click(function () {
+                $("#loader").show();
+                $("#loader").css("visibility", "visible");
+            });
+            $('#ImageButton2').click(function () {
+
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#ImageButton1').click(function () {
+
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#itemLinkBtn').click(function () {
+
+
+                $("#loader").css("visibility", "visible");
+            });
+
+            $('#btn_places').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#btn_stuff').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#btn_viewCustomer').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#btn_manageUser').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#add_new_good').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#add_new_service').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+
+          
+            $('#btn_fast_post').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#submutNewfollowupBtn').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_user_manage_save').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_user_manage_delete').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_user_manage_add_user_btn').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_change_password_btn').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_manage_add_new_service').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_post_manage_btn_save').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_post_manage_btn_delete').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#admin_view_user_btn_displayAll').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+
+            $('#btn_faq_send').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            
+            
+            
+            $('#personal_info_btn_save').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            
+            $('#backBtn').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            
+
+            $('.img').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+
+            
+            /*
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+            */
+            $('#profile_img_btn').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#userMenu_btn').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_items').click(function () {
+                console.log("home clicked");
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_borneo_hot').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            
+            $('#link_nav_pwdchange').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_admin_profile').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_manage_user').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_manage_post').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_my_items').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_login').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+            $('#link_nav_signout').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+
+            $('#link_nav_help').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+
+            $('#submit_item_btn').click(function () {
+
+                $("#loader").css("visibility", "visible");
+            });
+
+        });
+
+        $(window).load(function () {
+            $('#headerContainer').click(function (event) {
+                event.stopPropagation();
+            });
+            $('html').click(function () {
+                $("#mySidenav").css("width", 0);
+            });
+
+            $('#mySidenav').click(function (event) {
+                event.stopPropagation();
+            });
+        });
+       
+    </script>
+
+
+  
+    <style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+        font-family: cursive;
+}
+
+.sidenav a {
+     
+    text-decoration: none;
+    font-size: 20px;
+    color: wheat;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+        .nav_items {
+        
+            font-size:16px;
+            font-weight:400;
+
+        }
+
+
+        .burgermenu
+{
+     display: block;
+    width: 34px;
+    height: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    background: white;
+    border-radius: 3px;
+    /* z-index: 1; */
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    margin-top: 7px;
+}
+ 
+</style>
+
+    <div id="mySidenav" style="    border-radius: 0px 15px 15px 0px;" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        
+        <div id="nav_profile_bar" runat="server"  style="margin-left:5px;margin-right:5px; border-radius:10px;text-align: center; padding-top: 20px;background-color: navajowhite;" >
+
+            <asp:ImageButton ClientIDMode="Static" ID="profile_img_btn" runat="server" style="cursor: pointer;border-radius:50%;width:100px;height:100px;" PostBackUrl="~/pages/pwdChange.aspx" ImageUrl="~/images/SabahLeaf.ico" />
+               <div style=" margin-top:10px;margin-bottom:10px; padding: 10px;text-align: center;">
+             <asp:Button ClientIDMode="Static" ID="userMenu_btn" style="margin-bottom: 10px;"  PostBackUrl="~/pages/pwdChange.aspx"  CssClass="btn btn-success " Text="Visitor"  runat="server" />
+                   <asp:Label ID="lbl_useremail" runat="server" style=" font-size: 11.5px;   color: darkblue;font-weight: 600;" Text="zyh860@gmail.com"></asp:Label>
+        </div>
+             </div>
+      
+        <div runat="server" id="nav_home" class="nav_items" style="padding: 5px;text-align: center;">
+       
+           <a id="link_nav_items"  href="../../pages/Home.aspx"  > <i class="icon ion-home"></i>  Home</a>
+        </div>
+        <div runat="server" id="nav_borneo_hot" class="nav_items" style="padding: 5px;text-align: center;">
+       
+           <a id="link_nav_borneo_hot" href="../../pages/borneo_hot.aspx" > <i class="icon ion-stats-bars"></i>  Borneo 'Hot'</a>
+        </div>
+         <div runat="server"  class="nav_items" id="nav_pwdchange" style="padding: 5px;text-align: center;">
+             <a id="link_nav_pwdchange" href="../../pages/pwdChange.aspx"  ><i class="icon ion-ios-person"></i> Profile</a>
+        </div>
+         <div runat="server"  class="nav_items" id="nav_admin_profile" style="padding: 5px;text-align: center;">
+             <a id="link_nav_admin_profile" href="../../pages/Admin/pwdChange_admin.aspx"  ><i class="icon ion-ios-cog-outline"></i> Admin Password</a>
+        </div>
+         <div runat="server"  class="nav_items" id="nav_manage_user" style="padding: 5px;text-align: center;">
+             <a id="link_nav_manage_user" href="../../pages/Admin/viewCustomerInfo.aspx"  ><i class="icon ion-person-stalker"></i> Manage Travellers</a>
+        </div>
+         <div runat="server"  class="nav_items" id="nav_manage_post" style="padding: 5px;text-align: center;">
+             <a id="link_nav_manage_post"  href="../../pages/Admin/traveller_admin_items.aspx"  ><i class="icon ion-ios-compose"></i> Manage Posts</a>
+        </div>
+
+         <div runat="server"  class="nav_items" id="nav_login" style="padding: 5px;text-align: center;">
+          
+           <a id="link_nav_login" href="../../pages/login.aspx" ><i class="icon ion-key"></i> Log In</a>
+        </div>
+        
+         <div runat="server"  class="nav_items" id="nav_my_items" style="padding: 5px;text-align: center;">
+            <a id="link_nav_my_items"  href="../../pages/Customer/traveller_self_items.aspx"  ><i class="icon ion-ios-albums"></i> My Posts</a> 
+        </div>
+
+        <div runat="server"  class="nav_items" id="nav_signout" style="padding: 5px;text-align: center;">
+            <a id="link_nav_signout" href="../../pages/signout.aspx"  ><i class="icon ion-android-exit"></i> Sign Out</a> 
+        </div>
+
+        <div runat="server"  class="nav_items" id="nav_help" style="padding: 5px;text-align: center;">
+            <a id="link_nav_help" href="../../pages/contact.aspx"  ><i class="icon ion-help"></i> Help</a> 
+        </div>
+
+
+
+          
+         
+</div>
+    
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">
+     <span class="burgermenu"></span>
+     <span class="burgermenu"></span>
+     <span class="burgermenu"></span>
+     </span>
+ 
+
+</asp:Content>
+
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="content" Runat="Server">
+
+    <div runat="server" id="AlertBox" class="alertBox" Visible="false">
+    <div runat="server" id="AlertBoxMessage"></div>
+    <button onclick="closeAlert.call(this, event)">Ok</button>
+</div>
+     
+
+
+
+          <style type="text/css">
+
+              #userFucntionsList {
+             
+             
+       
+  list-style: square;
+  
+  width:80%;
+  margin:0 auto;
+
+
+display: inline;
+padding: 5px;
+
+margin: 5px;
+                  
+                   }
+
+               
+       
+
+          </style>    
+     
+   
+    
+    <!--slider-->              
+
+    <div class=" row-centered" runat="server">   
+                       
+        
+    <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" EnableViewState="true" EnablePageMethods="true" runat="server"></asp:ScriptManager>
+           <script type="text/javascript">
+               // It is important to place this JavaScript code after ScriptManager1
+               var xPos, yPos;
+               var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+               function BeginRequestHandler(sender, args) {
+                   if ($get('<%=PlaceHolder_user.ClientID%>') != null) {
+              // Get X and Y positions of scrollbar before the partial postback
+              xPos = $get('<%=PlaceHolder_user.ClientID%>').scrollLeft;
+            yPos = $get('<%=PlaceHolder_user.ClientID%>').scrollTop;
+        }
+    }
+
+    function EndRequestHandler(sender, args) {
+        if ($get('<%=PlaceHolder_user.ClientID%>') != null) {
+             // Set X and Y positions back to the scrollbar
+             // after partial postback
+             $get('<%=PlaceHolder_user.ClientID%>').scrollLeft = xPos;
+             $get('<%=PlaceHolder_user.ClientID%>').scrollTop = yPos;
+         }
+     }
+
+     prm.add_beginRequest(BeginRequestHandler);
+     prm.add_endRequest(EndRequestHandler);
+ </script>
+            
+     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                 <ContentTemplate>
+                  <div id="refresh">  
+         <asp:PlaceHolder ID="PlaceHolder_user" runat="server"></asp:PlaceHolder></div>  
+                    
+                       </ContentTemplate>
+                     </asp:UpdatePanel> 
+
+          <asp:PlaceHolder ID="PlaceHolder_currency" runat="server"></asp:PlaceHolder> 
+           
+           
+
+          <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                 <ContentTemplate>
+                  
+         <asp:PlaceHolder ID="PlaceHolder_weather_succinct" runat="server"></asp:PlaceHolder> 
+                      
+                       </ContentTemplate>
+                     </asp:UpdatePanel> 
+       
+                   <script type="text/javascript">
+                       function redirectGood() {
+                           location.href = '/pages/Customer/goods.aspx';
+                       }
+                       function redirectService() {
+                           location.href = '/pages/Customer/Services.aspx';
+                       }
+
+
+                       function redirectViewCus() {
+                           location.href = '/pages/Admin/viewCustomerInfo.aspx';
+                       }
+                       function redirectManageUser() {
+                           location.href = '/pages/Admin/manageUser.aspx';
+                       }
+                   </script>
+        <div class="row-centered">
+                <asp:Button ID="btn_places" ClientIDMode="Static" style=" border-radius: 8px;font-weight: 700;   margin-top: 6px;box-shadow: 2px 2px grey;border:outset;padding-top:3px;" CssClass="   btn btn-success" Height="30px"   Text="Great Places in North Borneo"    OnClick="btn_viewServices_click"  runat="server"    />
+                        
+                     <asp:Button ID="btn_stuff" ClientIDMode="Static"  style="   border-radius: 8px;font-weight: 700;   margin-top: 6px;box-shadow: 2px 2px grey;border:outset;padding-top:3px;" CssClass="   btn btn-primary" Height="30px"   Text="Interesting Stuffs in North Borneo"  runat="server"   OnClick="btn_viewGoods_click"  />
+                      
+              
+              <br/> <asp:Button ID="btn_viewCustomer" ClientIDMode="Static"  style=" border-radius: 8px;font-weight: 700;     margin-top: 6px;box-shadow: 2px 2px grey;border:outset;padding-top:3px;"  CssClass="  btn   btn-danger" Height="30px"    Text="View Travellers"    OnClick="btn_viewCustomer_click"  runat="server" Visible="False"    />
+         
+                     <asp:Button ID="btn_manageUser" ClientIDMode="Static"  style="  border-radius: 8px;font-weight: 700;    margin-top: 6px;box-shadow: 2px 2px grey;border:outset;padding-top:3px;"  CssClass="  btn   btn-danger" Height="30px"   Text="Manage Travellers"     OnClick="btn_manageUser_click"   runat="server" Visible="False"  />
+       </div>
+                <style type="text/css">
+                                 
+#loader {
+ 
+  opacity:0.65;
+   border-radius: 15px;
+   width:85px;
+   height:85px;
+   position: fixed !important;
+	            top:0 !important;
+	            bottom: 0 !important;
+	            left: 0 !important;
+	            right: 0 !important;
+	            margin: auto !important;
+                z-index: 100;
+                
+}
+
+ 
+                 </style>
+          
+        <asp:Image ID="loader" ClientIDMode="Static" ImageUrl="~/images/load.gif" runat="server" />
+            <asp:PlaceHolder ID="link_services" runat="server"></asp:PlaceHolder>
+             <asp:ContentPlaceHolder id="pageContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+          
+          <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+     
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+            
+      </div>
+    
+    
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="pageScripts" Runat="Server">
+    <asp:ContentPlaceHolder id="scripts" runat="server">
+    
+        
+        
+    </asp:ContentPlaceHolder> 
+
+</asp:Content>  

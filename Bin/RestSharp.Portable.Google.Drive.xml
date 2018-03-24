@@ -1,0 +1,1587 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RestSharp.Portable.Google.Drive</name>
+    </assembly>
+    <members>
+        <member name="M:RestSharp.Portable.Google.Drive.ConservativeJsonSerializer.ConfigureSerializer(Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            Configure the <see cref="T:RestSharp.Portable.Serializers.JsonSerializer"/>
+            </summary>
+            <param name="serializer">The serializer to configure</param>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.FileExtensions">
+            <summary>
+            Extension methods for the <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> type
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.FileExtensions.DirectoryMimeType">
+            <summary>
+            Mime type for a directory entry
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.FileExtensions.IsDirectory(RestSharp.Portable.Google.Drive.Model.File)">
+            <summary>
+            Test if <paramref name="file"/> is a sub directory
+            </summary>
+            <param name="file">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to test for being a sub directory</param>
+            <returns><code>true</code> when <paramref name="file"/> is a sub directory</returns>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.GoogleDriveService">
+            <summary>
+            A class to access the Google Drive API V2
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.GoogleDriveService.GoogleApi">
+            <summary>
+            The Google API scheme/host
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.GoogleDriveService.DriveApiPath">
+            <summary>
+            The base path for the Google Drive API
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.#ctor(RestSharp.Portable.Google.Drive.IRequestFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestSharp.Portable.Google.Drive.GoogleDriveService"/> class.
+            </summary>
+            <param name="factory">The factory to create the <see cref="T:RestSharp.Portable.IRestClient"/> implementation and <see cref="T:System.Net.HttpWebRequest"/> instance.</param>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.CombinePath(System.String,System.String[])">
+            <summary>
+            Appends parts to a path
+            </summary>
+            <param name="path">The path to append to</param>
+            <param name="parts">The parts to append</param>
+            <returns>The </returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.CombinePath(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Appends parts to a path
+            </summary>
+            <param name="path">The path to append to</param>
+            <param name="parts">The parts to append</param>
+            <returns>The </returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.SplitPath(System.String)">
+            <summary>
+            Split the path into parts
+            </summary>
+            <param name="path">The path to split</param>
+            <returns>The parts of the path</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.AboutAsync(System.Threading.CancellationToken)">
+            <summary>
+            The <code>about</code> request to get some basic information about the
+            Google Drive service to use.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns>The basic Google Drive information</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.DeleteAsync(RestSharp.Portable.Google.Drive.Model.File,System.Threading.CancellationToken)">
+            <summary>
+            Delete the given <paramref name="item"/>
+            </summary>
+            <param name="item">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to delete</param>
+            <param name="cancellationToken"></param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.TrashAsync(RestSharp.Portable.Google.Drive.Model.File,System.Threading.CancellationToken)">
+            <summary>
+            Move the <paramref name="item"/> into the trash
+            </summary>
+            <param name="item">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to move into the trash</param>
+            <param name="cancellationToken"></param>
+            <returns>The modified <paramref name="item"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.UntrashAsync(RestSharp.Portable.Google.Drive.Model.File,System.Threading.CancellationToken)">
+            <summary>
+            Remove the <paramref name="item"/> from the trash
+            </summary>
+            <param name="item">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to remove from the trash</param>
+            <param name="cancellationToken"></param>
+            <returns>The modified <paramref name="item"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.MoveAsync(RestSharp.Portable.Google.Drive.Model.File,System.String,RestSharp.Portable.Google.Drive.Model.File,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Changes the parent of the <paramref name="item"/> and (optionally) its name.
+            </summary>
+            <param name="item">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to change the parent for</param>
+            <param name="sourceFolderId">The original parent of the <paramref name="item"/></param>
+            <param name="destinationFolder">The target parent of the <paramref name="item"/></param>
+            <param name="newTitle">The new <paramref name="item"/> name (title)</param>
+            <param name="cancellationToken"></param>
+            <returns>The modified <paramref name="item"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.UpdateAsync(System.String,RestSharp.Portable.Google.Drive.Model.File,System.Threading.CancellationToken)">
+            <summary>
+            Update the file metadata
+            </summary>
+            <param name="itemId">The ID of the item to update</param>
+            <param name="newItemValues">The values to update</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns>The modified item</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetDownloadUrlAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the download URL for a <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/>
+            </summary>
+            <param name="fileId">The id of the <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to download</param>
+            <param name="cancellationToken"></param>
+            <returns>The download URL</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetDownloadUrl(RestSharp.Portable.Google.Drive.Model.File)">
+            <summary>
+            Get the download URL for a <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/>
+            </summary>
+            <param name="info"></param>
+            <returns>The download URL</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetDownloadResponseAsync(RestSharp.Portable.Google.Drive.Model.File,System.Nullable{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            Get a <see cref="T:System.Net.HttpWebResponse"/> to download a <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/>
+            </summary>
+            <param name="file">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to download</param>
+            <param name="from">The offset where the download starts from</param>
+            <param name="cancellationToken"></param>
+            <returns>The <see cref="T:System.Net.HttpWebResponse"/> used to download the file</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.UploadAsync(RestSharp.Portable.Google.Drive.Model.File,System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Update a files contents
+            </summary>
+            <param name="file">The file to update</param>
+            <param name="input">The new file data</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns>The updated <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> metadata</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.UploadAsync(System.String,System.IO.Stream,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Update a files contents
+            </summary>
+            <param name="fileId">The ID of the file to update</param>
+            <param name="input">The new file data</param>
+            <param name="mimeType">The mime type of the data</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns>The updated <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> metadata</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.UploadAsync(System.String,System.String,System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Upload a file
+            </summary>
+            <remarks>
+            The mime type is guessed using the given <paramref name="name"/>.
+            </remarks>
+            <param name="folderId">The target <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder) ID to upload to</param>
+            <param name="name">The new file name</param>
+            <param name="input">The data to upload</param>
+            <param name="cancellationToken"></param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.UploadAsync(System.String,System.String,System.IO.Stream,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Upload a file
+            </summary>
+            <param name="folderId">The target <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder) ID to upload to</param>
+            <param name="name">The new file name</param>
+            <param name="input">The data to upload</param>
+            <param name="mimeType">The mime type of the file to upload</param>
+            <param name="cancellationToken"></param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetFileAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (file or folder) metadata
+            </summary>
+            <param name="fileId">The ID of the item to get the metadata for</param>
+            <param name="cancellationToken"></param>
+            <returns>The metadata</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetChildrenAsync(RestSharp.Portable.Google.Drive.Model.File,System.Threading.CancellationToken)">
+            <summary>
+            Gets all children of a <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (<paramref name="folder"/>)
+            </summary>
+            <param name="folder">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> to get its children from</param>
+            <param name="cancellationToken"></param>
+            <returns>The children of <paramref name="folder"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetDirectoriesAsync(RestSharp.Portable.Google.Drive.Model.File,System.Threading.CancellationToken)">
+            <summary>
+            Get all subfolders of the <paramref name="folder"/>
+            </summary>
+            <param name="folder">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder) to get the subfolders from</param>
+            <param name="cancellationToken"></param>
+            <returns>The list of <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (subfolders) for the given <paramref name="folder"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetFilesAsync(RestSharp.Portable.Google.Drive.Model.File,System.Threading.CancellationToken)">
+            <summary>
+            Get all files in a given <paramref name="folder"/>
+            </summary>
+            <param name="folder">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder) to get its files from</param>
+            <param name="cancellationToken"></param>
+            <returns>The list of <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (files) for the given <paramref name="folder"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.CreateDirectoryAsync(RestSharp.Portable.Google.Drive.Model.File,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Create a new subfolder
+            </summary>
+            <param name="folder">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder) to create the subfolder in</param>
+            <param name="name">The new subfolder name</param>
+            <param name="cancellationToken"></param>
+            <returns>The new subfolder metadata</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.CreateItemAsync(RestSharp.Portable.Google.Drive.Model.File,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Create a new item (file or folder)
+            </summary>
+            <param name="folder">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder) to create the subfolder in</param>
+            <param name="name">The new subfolder name</param>
+            <param name="cancellationToken"></param>
+            <returns>The new subfolder metadata</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.CreateItemAsync(RestSharp.Portable.Google.Drive.Model.File,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Create a new item (file or folder)
+            </summary>
+            <param name="folder">The <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder) to create the subfolder in</param>
+            <param name="name">The new subfolder name</param>
+            <param name="mimeType">The mime type of the new item</param>
+            <param name="cancellationToken"></param>
+            <returns>The new subfolder metadata</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.FindChildByNameAsync(RestSharp.Portable.Google.Drive.Model.File,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Find a child item by name
+            </summary>
+            <param name="folder">The folder to search in</param>
+            <param name="fileName">The name to search for</param>
+            <param name="cancellationToken"></param>
+            <returns>The list of found items</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.GetOrCreateDirectoryAsync(RestSharp.Portable.Google.Drive.Model.File,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get or create the subfolder the <paramref name="folder"/> and <paramref name="path"/> are pointing to
+            </summary>
+            <param name="folder">The base <see cref="T:RestSharp.Portable.Google.Drive.Model.File"/> (folder)</param>
+            <param name="path">The path to the subfolder (divided by a /)</param>
+            <param name="cancellationToken"></param>
+            <returns>The metadata of the found or created subfolder</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.GoogleDriveService.Dispose">
+            <summary>
+            Dispose all resources
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.HttpRange">
+            <summary>
+            This class encapsualtes a HTTP range
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRange.#ctor(System.String,RestSharp.Portable.Google.Drive.HttpRangeItem[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestSharp.Portable.Google.Drive.HttpRange"/> class.
+            </summary>
+            <param name="unit">The unit of the range (currently only <code>bytes</code> is allowed)</param>
+            <param name="rangeItems">The HTTP range items for this range</param>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.HttpRange.Unit">
+            <summary>
+            Gets the unit for this HTTP range
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.HttpRange.RangeItems">
+            <summary>
+            Gets the HTTP range items
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRange.Parse(System.String)">
+            <summary>
+            Parses a <paramref name="range"/> into a new <see cref="T:RestSharp.Portable.Google.Drive.HttpRange"/> instance
+            </summary>
+            <remarks>
+            The range must be in the form <code>unit=(range)+</code>
+            </remarks>
+            <param name="range">The range to parse</param>
+            <returns>The new <see cref="T:RestSharp.Portable.Google.Drive.HttpRange"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRange.ToString">
+            <summary>
+            Returns the textual representation of this range.
+            </summary>
+            <remarks>
+            The return value of this function can be parsed using <see cref="M:RestSharp.Portable.Google.Drive.HttpRange.Parse(System.String)"/>.
+            </remarks>
+            <returns>The textual representation of this range</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRange.ToString(RestSharp.Portable.Google.Drive.HttpRangeItem)">
+            <summary>
+            Returns the textual representation of a single <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/>
+            </summary>
+            <remarks>
+            The return value of this function looks like <code>unit range/length</code>
+            </remarks>
+            <param name="rangeItem">The <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/> to get the textual representation for</param>
+            <returns>The textual representation of <paramref name="rangeItem"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRange.ToString(RestSharp.Portable.Google.Drive.HttpRangeItem,System.Nullable{System.Int64})">
+            <summary>
+            Returns the textual representation of a single <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/>
+            </summary>
+            <remarks>
+            The return value of this function looks like <code>unit range/length</code>
+            </remarks>
+            <param name="rangeItem">The <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/> to get the textual representation for</param>
+            <param name="length">The length value to be used in the textual representation</param>
+            <returns>The textual representation of <paramref name="rangeItem"/></returns>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.HttpRangeItem">
+            <summary>
+            Range for a HTTP request or response
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRangeItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/> class.
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRangeItem.#ctor(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/> class.
+            </summary>
+            <param name="from">From byte</param>
+            <param name="to">To byte</param>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.HttpRangeItem.From">
+            <summary>
+            Gets the start position
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.HttpRangeItem.To">
+            <summary>
+            Gets the end position
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRangeItem.Parse(System.String)">
+            <summary>
+            Parses a <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/> from a string
+            </summary>
+            <remarks>
+            Allowed are: "*", "from-", "-to", "from-to"
+            </remarks>
+            <param name="rangeItem">The string to parse</param>
+            <returns>The new <see cref="T:RestSharp.Portable.Google.Drive.HttpRangeItem"/></returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.HttpRangeItem.ToString">
+            <summary>
+            Returns the textual representation of the HTTP range item
+            </summary>
+            <returns>the textual representation of the HTTP range item</returns>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.IRequestFactory">
+            <summary>
+            A factory interface which is used by <see cref="T:RestSharp.Portable.Google.Drive.GoogleDriveService"/> to create a new <see cref="T:RestSharp.Portable.IRestClient"/> implementation
+            and/or a new <see cref="T:System.Net.HttpWebRequest"/>.
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.IRequestFactory.CreateRestClient(System.Uri)">
+            <summary>
+            Creates a new instance of a <see cref="T:RestSharp.Portable.IRestClient"/>.
+            </summary>
+            <remarks>
+            The OAuth2 authenticator has to be set!
+            </remarks>
+            <param name="baseUri">The base <see cref="T:System.Uri"/> to initialize the rest client with</param>
+            <returns>The new <see cref="T:RestSharp.Portable.IRestClient"/> implementation</returns>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.IRequestFactory.CreateWebRequest(System.Uri)">
+            <summary>
+            Create a new <see cref="T:System.Net.HttpWebRequest"/> for the given <paramref name="requestUri"/>
+            </summary>
+            <param name="requestUri">The <see cref="T:System.Uri"/> for the request</param>
+            <returns>The new <see cref="T:System.Net.HttpWebRequest"/> for the given <paramref name="requestUri"/></returns>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.MimeTypes.FallbackMimeType">
+            <summary>
+            The fallback MIME-type. Defaults to <c>application/octet-stream</c>.
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.MimeTypes.GetMimeType(System.String)">
+            <summary>
+            Gets the MIME-type for the given file name,
+            or <see cref="P:RestSharp.Portable.Google.Drive.MimeTypes.FallbackMimeType"/> if a mapping doesn't exist.
+            </summary>
+            <param name="fileName">The name of the file.</param>
+            <returns>The MIME-type for the given file name.</returns>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.About">
+            <summary>
+            Information about the current user along with Drive API settings
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.Kind">
+            <summary>
+            This is always <code>drive#about</code>.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.Etag">
+            <summary>
+            The ETag of the item.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.SelfLink">
+            <summary>
+            A link back to this item.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.Name">
+            <summary>
+            The name of the current user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.User">
+            <summary>
+            The authenticated user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.QuotaBytesTotal">
+            <summary>
+            The total number of quota bytes.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.QuoteBytesUsed">
+            <summary>
+            The number of quota bytes used by Google Drive.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.QuoteBytesUsedAggregate">
+            <summary>
+            The number of quota bytes used by all Google apps (Drive, Picasa, etc.).
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.QuoteBytesUsedInTrash">
+            <summary>
+            The number of quota bytes used by trashed items. 	
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.QuotaType">
+            <summary>
+            The type of the user's storage quota.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.QuotaBytesByService">
+            <summary>
+            The amount of storage quota used by different Google services
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.LargestChangeId">
+            <summary>
+            The largest change id.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.RemainingChangeIds">
+            <summary>
+            The number of remaining change ids.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.RootFolderId">
+            <summary>
+            The id of the root folder.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.DomainSharingPolicy">
+            <summary>
+            The domain sharing policy for the current user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.PermissionId">
+            <summary>
+            The current user's ID as visible in the permissions collection.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.ImportFormats">
+            <summary>
+            The allowable import formats.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.ExportFormats">
+            <summary>
+            The allowable export formats.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.AdditionalRoleInfo">
+            <summary>
+            Information about supported additional roles per file type.
+            </summary>
+            <remarks>
+            The most specific type takes precedence.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.Features">
+            <summary>
+            List of additional features enabled on this account.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.MaxUploadSizes">
+            <summary>
+            List of max upload sizes for each file type.
+            </summary>
+            <remarks>
+            The most specific type takes precedence.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.IsCurrentAppInstalled">
+            <summary>
+            A value indicating whether the authenticated app is installed by the authenticated user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.LanguageCode">
+            <summary>
+            The user's language or locale code, as defined by BCP 47, with some extensions from Unicode's LDML format.
+            </summary>
+            <remarks>
+            http://www.unicode.org/reports/tr35/
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.About.FolderColorPalette">
+            <summary>
+            The palette of allowable folder colors as RGB hex strings.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.AccountType">
+            <summary>
+            The account type
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.AccountType.User">
+            <summary>
+            User account
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.AccountType.Group">
+            <summary>
+            Group
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.AccountType.Domain">
+            <summary>
+            Domain
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.AccountType.Anyone">
+            <summary>
+            Anyone
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.AdditionalRoleInfo">
+            <summary>
+            Information about supported additional roles per file type. The most specific type takes precedence.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.AdditionalRoleInfo.Type">
+            <summary>
+            The content type that this additional role info applies to.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.AdditionalRoleInfo.RoleSets">
+            <summary>
+            The supported additional roles per primary role.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.ChildReference">
+            <summary>
+            A reference to a folder's child
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ChildReference.Kind">
+            <summary>
+            This is always <code>drive#childReference</code>.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ChildReference.Id">
+            <summary>
+            The ID of the child.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ChildReference.SelfLink">
+            <summary>
+            A link back to this reference.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ChildReference.ChildLink">
+            <summary>
+            A link to the child.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.DomainSharingPolicy">
+            <summary>
+            The domain sharing policy for the user
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.DomainSharingPolicy.Allowed">
+            <summary>
+            Domain sharing allowed
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.DomainSharingPolicy.AllowedWithWarning">
+            <summary>
+            Domain sharing allowed with warning
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.DomainSharingPolicy.IncomingOnly">
+            <summary>
+            Only incoming
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.DomainSharingPolicy.Disallowed">
+            <summary>
+            Domain sharing disallowed
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Feature">
+            <summary>
+            List of additional features enabled for an account.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Feature.FeatureName">
+            <summary>
+            The name of the feature.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Feature.FeatureRate">
+            <summary>
+            The request limit rate for this feature, in queries per second.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.File">
+            <summary>
+            The metadata for a file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Kind">
+            <summary>
+            The type of file. This is always <code>drive#file</code>.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Id">
+            <summary>
+            The ID of the file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Etag">
+            <summary>
+            ETag of the file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.SelfLink">
+            <summary>
+            A link back to this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.WebContentLink">
+            <summary>
+            A link for downloading the content of the file in a browser using cookie based authentication.
+            </summary>
+            <remarks>
+            In cases where the content is shared publicly, the content can be downloaded without any credentials.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.WebViewLink">
+            <summary>
+            A link only available on public folders for viewing their static web assets (HTML, CSS, JS, etc)
+            via Google Drive's Website Hosting.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.AlternateLink">
+            <summary>
+            A link for opening the file in a relevant Google editor or viewer.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.EmbedLink">
+            <summary>
+            A link for embedding the file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.OpenWithLinks">
+            <summary>
+            A map of the id of each of the user's apps to a link to open this file with that app.
+            </summary>
+            <remarks>
+            Only populated when the drive.apps.readonly scope is used.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.DefaultOpenWithLinks">
+            <summary>
+            A link to open this file with the user's default app for this file.
+            </summary>
+            <remarks>
+            Only populated when the drive.apps.readonly scope is used.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.IconLink">
+            <summary>
+            A link to the file's icon.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.ThumbnailLink">
+            <summary>
+            A short-lived link to the file's thumbnail.
+            </summary>
+            <remarks>
+            Typically lasts on the order of hours.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Thumbnail">
+            <summary>
+            Thumbnail for the file.
+            </summary>
+            <remarks>
+            Only accepted on upload and for files that are not already thumbnailed by Google.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Title">
+            <summary>
+            The title of the file. Used to identify file or folder name.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.MimeType">
+            <summary>
+            The MIME type of the file.
+            </summary>
+            <remarks>
+            This is only mutable on update when uploading new content. This field can be left blank,
+            and the mimetype will be determined from the uploaded content's MIME type.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Description">
+            <summary>
+            A short description of the file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Labels">
+            <summary>
+            A group of labels for the file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.CreatedDate">
+            <summary>
+            Create time for this file
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.ModifiedDate">
+            <summary>
+            Last time this file was modified by anyone
+            </summary>
+            <remarks>
+            This is only mutable on update when the setModifiedDate parameter is set.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.ModifiedByMeDate">
+            <summary>
+            Last time this file was modified by the user.
+            </summary>
+            <remarks>
+            Note that setting <see cref="P:RestSharp.Portable.Google.Drive.Model.File.ModifiedDate"/> will also update the 
+            <see cref="P:RestSharp.Portable.Google.Drive.Model.File.ModifiedByMeDate"/> date for the user which set the date.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.LastViewedByMeDate">
+            <summary>
+            Last time this file was viewed by the user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.MarkedViewedByMeDate">
+            <summary>
+            Time this file was explicitly marked viewed by the user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.SharedWithMeDate">
+            <summary>
+            Time at which this file was shared with the user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Version">
+            <summary>
+            A monotonically increasing version number for the file.
+            </summary>
+            <remarks>
+            This reflects every change made to the file on the server,
+            even those not visible to the requesting user.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.SharingUser">
+            <summary>
+            User that shared the item with the current user, if available.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Parents">
+            <summary>
+            Collection of parent folders which contain this file.
+            </summary>
+            <remarks>
+            Setting this field will put the file in all of the provided folders.
+            On insert, if no folders are provided, the file will be placed in the
+            default root folder.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.DownloadUrl">
+            <summary>
+            The download URL
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.ExportLinks">
+            <summary>
+            Links for exporting Google Docs to specific formats.
+            </summary>
+            <remarks>
+            A mapping from export format to URL
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.IndexableText">
+            <summary>
+            Indexable text attributes for the file.
+            </summary>
+            <remarks>
+            This property can only be written, and is not returned by <code>files.get</code>.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.UserPermissions">
+            <summary>
+            The permissions for the authenticated user on this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Permissions">
+            <summary>
+            The list of permissions for users with access to this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.OriginalFilename">
+            <summary>
+            The original filename if the file was uploaded manually, or the original title if the file was inserted through the API.
+            </summary>
+            <remarks>
+            Note that renames of the title will not change the original filename.
+            This field is only populated for files with content stored in Drive;
+            it is not populated for Google Docs or shortcut files.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.FileExtension">
+            <summary>
+            The final component of fullFileExtension with trailing text that does not appear
+            to be part of the extension removed.
+            </summary>
+            <remarks>
+            This field is only populated for files with content stored in Drive;
+            it is not populated for Google Docs or shortcut files.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.FullFileExtension">
+            <summary>
+            The full file extension; extracted from the title.
+            </summary>
+            <remarks>
+            May contain multiple concatenated extensions, such as "tar.gz".
+            Removing an extension from the title does not clear this field;
+            however, changing the extension on the title does update this field.
+            This field is only populated for files with content stored in Drive;
+            it is not populated for Google Docs or shortcut files.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Md5Checksum">
+            <summary>
+            An MD5 checksum for the content of this file.
+            </summary>
+            <remarks>
+            This field is only populated for files with content stored in Drive;
+            it is not populated for Google Docs or shortcut files.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.FileSize">
+            <summary>
+            The size of the file in bytes.
+            </summary>
+            <remarks>
+            This field is only populated for files with content stored in Drive;
+            it is not populated for Google Docs or shortcut files.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.QuotaBytesUsed">
+            <summary>
+            The number of quota bytes used by this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.OwnerNames">
+            <summary>
+            Name(s) of the owner(s) of this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Owners">
+            <summary>
+            The owner(s) of this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.LastModifyingUserName">
+            <summary>
+            Name of the last user to modify this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.LastModifyingUser">
+            <summary>
+            The last user to modify this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.OwnedByMe">
+            <summary>
+            Whether the file is owned by the current user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Editable">
+            <summary>
+            Whether the file can be edited by the current user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.CanComment">
+            <summary>
+            Whether the current user can comment on the file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Shareable">
+            <summary>
+            Whether the file's sharing settings can be modified by the current user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Copyable">
+            <summary>
+            Whether the file can be copied by the current user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.WritersCanShare">
+            <summary>
+            Whether writers can share the document with other users.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Shared">
+            <summary>
+            Whether the file has been shared.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.ExplicitlyTrashed">
+            <summary>
+            Whether this file has been explicitly trashed, as opposed to recursively trashed.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.AppDataContents">
+            <summary>
+            Whether this file is in the Application Data folder.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.HeadRevisionId">
+            <summary>
+            The ID of the file's head revision.
+            </summary>
+            <remarks>
+            This field is only populated for files with content stored in Drive;
+            it is not populated for Google Docs or shortcut files.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Properties">
+            <summary>
+            The list of properties.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.FolderColorRgb">
+            <summary>
+            Folder color as an RGB hex string if the file is a folder.
+            </summary>
+            <remarks>
+            The list of supported colors is available in the <see cref="P:RestSharp.Portable.Google.Drive.Model.About.FolderColorPalette"/>
+            field of the About resource. If an unsupported color is specified,
+            it will be changed to the closest color in the palette.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.ImageMediaMetadata">
+            <summary>
+            Metadata about image media.
+            </summary>
+            <remarks>
+            This will only be present for image types,
+            and its contents will depend on what can be
+            parsed from the image content.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.VideoMediaMetadata">
+            <summary>
+            Metadata about video media.
+            </summary>
+            <remarks>
+            This will only be present for video types. 	
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.File.Spaces">
+            <summary>
+            The list of spaces which contain the file.
+            </summary>
+            <remarks>
+            Supported values are 'drive', 'appDataFolder' and 'photos'.
+            </remarks>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.Model.File.ToString">
+            <summary>
+            Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt.
+            </summary>
+            <returns>
+            Eine Zeichenfolge, die das aktuelle Objekt darstellt.
+            </returns>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.FileLabels">
+            <summary>
+            A group of labels for a file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.FileLabels.Starred">
+            <summary>
+            Whether this file is starred by the user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.FileLabels.Hidden">
+            <summary>
+            Deprecated
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.FileLabels.Trashed">
+            <summary>
+            Whether this file has been trashed.
+            </summary>
+            <remarks>
+            This label applies to all users accessing the file;
+            however, only owners are allowed to see and untrash files.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.FileLabels.Restricted">
+            <summary>
+            Whether viewers and commenters are prevented from downloading, printing, and copying this file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.FileLabels.Viewed">
+            <summary>
+            Whether this file has been viewed by this user.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Format">
+            <summary>
+            Import or export format
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Format.Source">
+            <summary>
+            The content type to convert from.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Format.Targets">
+            <summary>
+            The possible content types to convert to.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata">
+            <summary>
+            Metadata about image media.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Width">
+            <summary>
+            The width of the image in pixels.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Height">
+            <summary>
+            The height of the image in pixels.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Rotation">
+            <summary>
+            The rotation in clockwise degrees from the image's original orientation.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Location">
+            <summary>
+            Geographic location information stored in the image.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Date">
+            <summary>
+            The date and time the photo was taken (EXIF format timestamp).
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.CameraMake">
+            <summary>
+            The make of the camera used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.CameraModel">
+            <summary>
+            The model of the camera used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.ExposureTime">
+            <summary>
+            The length of the exposure, in seconds.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Aperture">
+            <summary>
+            The aperture used to create the photo (f-number).
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.FlashUsed">
+            <summary>
+            Whether a flash was used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.FocalLength">
+            <summary>
+            The focal length used to create the photo, in millimeters.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.IsoSpeed">
+            <summary>
+            The ISO speed used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.MeteringMode">
+            <summary>
+            The metering mode used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Sensor">
+            <summary>
+            The type of sensor used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.ExposureMode">
+            <summary>
+            The exposure mode used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.ColorSpace">
+            <summary>
+            The color space of the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.WhiteBalance">
+            <summary>
+            The white balance mode used to create the photo.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.ExposureBias">
+            <summary>
+            The exposure bias of the photo (APEX value).
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.MaxApertureValue">
+            <summary>
+            The smallest f-number of the lens at the focal length used to create the photo (APEX value).
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.SubjectDistance">
+            <summary>
+            The distance to the subject of the photo, in meters.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ImageMediaMetadata.Lens">
+            <summary>
+            The lens used to create the photo.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Location">
+            <summary>
+            Geographic location information.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Location.Latitude">
+            <summary>
+            The latitude
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Location.Longitude">
+            <summary>
+            The longitude
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Location.Altitude">
+            <summary>
+            The altitude
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.MaxUploadSize">
+            <summary>
+            List of max upload sizes for a file type.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.MaxUploadSize.Type">
+            <summary>
+            The file type.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.MaxUploadSize.Size">
+            <summary>
+            The max upload size for this type.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.ParentReference">
+            <summary>
+            A reference to a file's parent.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ParentReference.Kind">
+            <summary>
+            This is always <code>drive#parentReference</code>.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ParentReference.Id">
+            <summary>
+            The ID of the parent.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ParentReference.SelfLink">
+            <summary>
+            A link back to this reference.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ParentReference.ParentLink">
+            <summary>
+            A link to the parent.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ParentReference.IsRoot">
+            <summary>
+            Whether or not the parent is the root folder.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Permission">
+            <summary>
+            A permission for a file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Kind">
+            <summary>
+            This is always <code>drive#permission</code>.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Etag">
+            <summary>
+            The ETag of the permission.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Id">
+            <summary>
+            The ID of the user this permission refers to, and identical to
+            the <see cref="P:RestSharp.Portable.Google.Drive.Model.About.PermissionId"/> and <see cref="P:RestSharp.Portable.Google.Drive.Model.File.Permissions"/>.
+            </summary>
+            <remarks>
+            When making a drive.permissions.insert request, exactly one of the <see cref="P:RestSharp.Portable.Google.Drive.Model.Permission.Id"/>
+            or <see cref="P:RestSharp.Portable.Google.Drive.Model.Permission.Value"/> fields must be specified.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.SelfLink">
+            <summary>
+            A link back to this permission.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Name">
+            <summary>
+            The name for this permission.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Role">
+            <summary>
+            The primary role for this user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Type">
+            <summary>
+            The account type.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.AuthKey">
+            <summary>
+            The authkey parameter required for this permission.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.WithLink">
+            <summary>
+            Whether the link is required for this permission.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.PhotoLink">
+            <summary>
+            A link to the profile photo, if available.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Value">
+            <summary>
+            The email address or domain name for the entity.
+            </summary>
+            <remarks>
+            <para>This is used during inserts and is not populated in responses.</para>
+            <para>When making a <code>drive.permissions.insert</code> request, exactly one
+            of the <see cref="P:RestSharp.Portable.Google.Drive.Model.Permission.Id"/> or <see cref="P:RestSharp.Portable.Google.Drive.Model.Permission.Value"/> fields must be specified.</para>
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.EmailAddress">
+            <summary>
+            The email address of the user or group this permission refers to.
+            </summary>
+            <remarks>
+            This is an output-only field which is present when the permission type is user or group.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Permission.Domain">
+            <summary>
+            The domain name of the entity this permission refers to.
+            </summary>
+            <remarks>
+            This is an output-only field which is present when the permission type is user, group or domain.
+            </remarks>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Picture">
+            <summary>
+            A picture
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Picture.Url">
+            <summary>
+            A URL that points to a picture.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Property">
+            <summary>
+            A file property
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Property.Kind">
+            <summary>
+            This is always <code>drive#property</code>.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Property.Etag">
+            <summary>
+            ETag of the property.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Property.SelfLink">
+            <summary>
+            The link back to this property.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Property.Key">
+            <summary>
+            The key of this property.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Property.Visibility">
+            <summary>
+            The visibility of this property.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Property.Value">
+            <summary>
+            The value of this property.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.PropertyVisibility">
+            <summary>
+            The visibility of a property.
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.PropertyVisibility.Public">
+            <summary>
+            The property is visible by all apps.
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.PropertyVisibility.Private">
+            <summary>
+            The property is only available to the app that created it.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.QuotaBytesByService">
+            <summary>
+            The amount of storage quota used by a Google service.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.QuotaBytesByService.ServiceName">
+            <summary>
+            The service's name, e.g. DRIVE, GMAIL, or PHOTOS.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.QuotaBytesByService.BytesUsed">
+            <summary>
+            The storage quota bytes used by the service.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.QuotaType">
+            <summary>
+            The type of the user's storage quota.
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.QuotaType.Limited">
+            <summary>
+            Limited quota
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.QuotaType.Unlimited">
+            <summary>
+            Unlimited quota
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.ResourceList`1">
+            <summary>
+            Base type for resource lists
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ResourceList`1.Kind">
+            <summary>
+            The kind of resource
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ResourceList`1.Etag">
+            <summary>
+            The ETag of the item.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ResourceList`1.SelfLink">
+            <summary>
+            A link back to this item.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.ResourceList`1.Items">
+            <summary>
+            All items
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Role">
+            <summary>
+            The role for a permission
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.Role.Owner">
+            <summary>
+            Owner
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.Role.Reader">
+            <summary>
+            Reader
+            </summary>
+        </member>
+        <member name="F:RestSharp.Portable.Google.Drive.Model.Role.Writer">
+            <summary>
+            Writer
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.RoleSet">
+            <summary>
+            The supported additional roles per primary role.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.RoleSet.PrimaryRole">
+            <summary>
+            A primary permission role.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.RoleSet.AdditionalRoles">
+            <summary>
+            The supported additional roles with the primary role.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.TextData">
+            <summary>
+            A text item
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.TextData.Text">
+            <summary>
+            The text of this item
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.Thumbnail">
+            <summary>
+            Thumbnail for a file.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Thumbnail.Image">
+            <summary>
+            The URL-safe Base64 encoded bytes of the thumbnail image.
+            </summary>
+            <remarks>
+            It should conform to RFC 4648 section 5.
+            </remarks>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.Thumbnail.MimeType">
+            <summary>
+            The MIME type of the thumbnail.
+            </summary>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.User">
+            <summary>
+            A Google user
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.User.Kind">
+            <summary>
+            This is always <code>drive#user</code>.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.User.DisplayName">
+            <summary>
+            A plain text displayable name for this user.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.User.Picture">
+            <summary>
+            The user's profile picture.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.User.IsAuthenticatedUser">
+            <summary>
+            Whether this user is the same as the authenticated user for whom the request was made.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.User.PermissionId">
+            <summary>
+            The user's ID as visible in the permissions collection.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.User.EmailAddress">
+            <summary>
+            The email address of the user.
+            </summary>
+        </member>
+        <member name="M:RestSharp.Portable.Google.Drive.Model.User.ToString">
+            <summary>
+            Returns the <see cref="P:RestSharp.Portable.Google.Drive.Model.User.DisplayName"/>
+            </summary>
+            <returns>the <see cref="P:RestSharp.Portable.Google.Drive.Model.User.DisplayName"/></returns>
+        </member>
+        <member name="T:RestSharp.Portable.Google.Drive.Model.VideoMediaMetadata">
+            <summary>
+            Metadata about video media.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.VideoMediaMetadata.Width">
+            <summary>
+            The width of the video in pixels.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.VideoMediaMetadata.Height">
+            <summary>
+            The height of the video in pixels.
+            </summary>
+        </member>
+        <member name="P:RestSharp.Portable.Google.Drive.Model.VideoMediaMetadata.DurationMillis">
+            <summary>
+            The duration of the video in milliseconds.
+            </summary>
+        </member>
+    </members>
+</doc>
